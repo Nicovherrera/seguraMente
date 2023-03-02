@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <!-- Site made with Mobirise Website Builder v5.6.11, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.6.11, mobirise.com">
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image:src" content="assets/images/index-meta.jpg">
+  <meta property="og:image" content="assets/images/index-meta.jpg">
+  <meta name="twitter:title" content="Inicio">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="/assets/images/logo.png" type="image/x-icon">
+  <meta name="description" content="Esta es una WebApp que SeguraMente te sirva para algo! Ya sea desde el calculo del consumo de combustible hasta cuanto vario el precio de la carne en un determinado lapso de tiempo.">
+  
+  
+  <title>Inicio</title>
+  <link rel="stylesheet" href="/assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="/assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="/assets/theme/css/style.css">
+  <link rel="stylesheet" href="/assets/seguraMente.js/sm.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="/assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="/assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+  
+</head>
+<body onload="onLoad()">
+  
+  <section data-bs-version="5.1" class="menu menu3 cid-tubynRqAfn" once="menu" id="copy-section">
+    
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="/">SeguraMente</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/sobreSeguramente">Sobre Seguramente</a></li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="iniciarSesion.html">Iniciar Sesión</a></li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="registro.html">Registrate</a>
+                    </li></ul>
+                <div class="icons-menu">
+                    <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
+                    </a>
+                    <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section data-bs-version="5.1" class="header4 cid-tubzpW6SRq mbr-fullscreen" id="header4-6">
+    <div class="mbr-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="content-wrap">
+            	
+                <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-2" th:if="${mensaje==null && autoEncontrado==null && msjExito == null && consumoMsj==null && consumoEncontrado==null}">
+                    <strong>¿Sabes&nbsp;</strong><br><strong>cuanto consume tu auto?</strong></h1>
+                <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-2" th:if="${msjExito!=null}">
+                    <strong th:text="${msjExito}"></strong></h1>
+                <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-2" th:if="${autoEncontrado!=null}">
+                    <strong th:text="${autoEncontrado}"></strong></h1>
+                <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-2" th:if="${consumoEncontrado!=null}">
+                    <strong th:text="${consumoEncontrado}">&nbsp;</strong><br><strong th:text="${#numbers.formatDecimal((__${consumoAutoEncontrado.consumo}__),1,'POINT',2,'COMMA')}+' lts cada 100km!'"></strong></h1>
+                <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-2" th:if="${consumoMsj!=null}">
+                    <strong th:text="${consumoMsj}">&nbsp;</strong><br><strong th:text="${#numbers.formatDecimal((__${consumo.consumo}__),1,'POINT',2,'COMMA')}+' lts cada 100km!'"></strong></h1>    
+
+                <p class="mbr-fonts-style mbr-text mbr-white mb-3 display-7" th:if="${mensaje==null && autoEncontrado==null && msjExito==null && consumoMsj==null && consumoEncontrado==null}">
+               		Esta es una aplicación sencilla para que puedas calcularlo. SeguraMente no te detuviste a pensar como hacerlo, por eso nosotros lo hacemos por vos.
+                </p>
+                <p class="mbr-fonts-style mbr-text mbr-white mb-3 display-5" th:if="${msjExito!=null}">
+               	 	En la proxima carga deberás llenar el tanque y anotar el kilometraje de ese momento, y la cantidad de litros que cargaste.
+                </p>
+                <p class="mbr-fonts-style mbr-text mbr-white mb-3 display-5" th:if="${autoEncontrado!=null}">
+               		Ahora deberás llenar el tanque nuevamente y registrar el kilometraje actual y la cantidad de litros que cargaste.
+                </p>
+				<div th:if="${mensaje!=null}">
+				<h3 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-2" th:text="${mensaje}"></h3>
+				</div>		
+				<div th:if="${consumoEncontrado!=null}">
+				<h3 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-7" th:if="${consumoEncontrado!=null}" >Marca: <label th:text="${consumoAutoEncontrado.marca}"></label></h3>
+				<h3 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-7" th:if="${consumoEncontrado!=null}" >Modelo: <label th:text="${consumoAutoEncontrado.modelo}"></label></h3>
+				<h3 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-7" th:if="${consumoEncontrado!=null}" >Año: <label th:text="${consumoAutoEncontrado.anio}"></label></h3>
+				</div>
+				<div th:if="${consumoMsj!=null}">
+				<h3 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-7" th:if="${consumoMsj!=null}" >Marca: <label th:text="${consumo.marca}"></label></h3>
+				<h3 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-7" th:if="${consumoMsj!=null}" >Modelo: <label th:text="${consumo.modelo}"></label></h3>
+				<h3 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-7" th:if="${consumoMsj!=null}" >Año : <label th:text="${consumo.anio}"></label></h3>
+				</div>
+				<p class="mbr-fonts-style mbr-text mbr-white mb-3 display-5" th:if="${consumoMsj!=null || consumoEncontrado!=null}">Aprovecha esta info y cotizá el seguro para tu auto!.</p><br>
+				<div class="alert alert-danger col-12" th:if="${error!=null}">
+				<p class="mbr-section mbr-fonts-style mbr-white mb-3 display-4" th:text="${error}"></p>
+				</div>
+				<div class="mbr-section-btn" data-form-type="formoid"  th:if="${consumoMsj!=null || consumoEncontrado!=null}">
+				 <form action="" method="POST" class="mbr-form form-with-styler">
+				 <input th:if="${consumo!=null}" th:value="${consumo.marca}">
+				 <input th:if="${consumoMsj!=null}" th:value="${consumo.marca}">
+				 <input th:if="${consumo!=null}" th:value="${consumo.modelo}">
+				 <input th:if="${consumoMsj!=null}" th:value="${consumo.modelo}">
+				 <input th:if="${consumo!=null}" th:value="${consumo.anio}">
+				 <input th:if="${consumoMsj!=null}" th:value="${consumo.anio}">
+				<button class="btn btn-primary display-4"><a th:href="'https://api.whatsapp.com/send?text=Favor%20De%20Cotizar:%20Marca%20' + ${consumoAutoEncontrado.Marca}+'%20Modelo:%20'+ ${consumoAutoEncontrado.Modelo}+'%20Año:%20'+${consumoAutoEncontrado.anio}" class="text-white" target="_blank">Si! Quiero que me coticen</a></button>
+				</form>
+				</div>
+				
+					
+				<!-- FORMULARIO DE BUSQUEDA DE VEHÍCULO -->
+                <div th:if="${mensaje==null && autoEncontrado==null && msjExito==null && consumoMsj==null && consumoEncontrado==null}">
+                <form th:action="@{/consumo}" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
+                	<input type="hidden" name="email" data-form-email="true" value="" >
+                    <div class="row">
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">En tu próxima carga de combustible deberías completar los siguientes datos y llenar el tanque!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! some problem!
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-md col-sm-6 form-group mb-3" data-for="email">
+                            <input type="email" name="mail" placeholder="Regalanos tu mail" data-form-field="email" class="form-control" value="" id="email-form5-a" required>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-4">Enviar</button></div>
+                    </div>
+                </form>
+                </div>
+                
+                 <div class="mbr-section-btn"><a class="btn btn-primary display-4" href="index.html#calculo" th:if="${mensaje!=null}">Ya llené el tanque</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-primary display-4" href="/#calculo" th:if="${msjExito!=null || autoEncontrado!=lnull}">Listo! lo volvi a llenar </a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features1 cid-tubAVowx7B" id="features1-8">
+        
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-9">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <strong>Otras Utilidades</strong></h3>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="card col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-box align-center">
+                        <div class="iconfont-wrapper">
+                            <span class="mbr-iconfont mobi-mbri-cash mobi-mbri"></span>
+                        </div>
+                        <h5 class="card-title mbr-fonts-style display-7"><strong>Cotización del dólar</strong></h5>
+                        <p class="card-text mbr-fonts-style display-7">Seguramente sepas cuál es la cotización el dólar, pero sabes cual es la variación del dólar del ultimo año? Consulta en esta sección las cotizaciones del dólar americano y otras divisas, y sus respectivas evoluciones. "<em>Próximamente</em>"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-12 col-md-6 col-lg-3">
+                <div class="card-wrapper">
+                    <div class="card-box align-center">
+                        <div class="iconfont-wrapper">
+                           <a href="/calculoInflacion" target=""> <span class="mbr-iconfont mobi-mbri-growing-chart mobi-mbri"></a></span>
+                        </div>
+                        <h5 class="card-title mbr-fonts-style display-7"><strong>Calculo de Inflación</strong></h5>
+                        <p class="card-text mbr-fonts-style display-7">En esta sección podes ir llevando un registro de aquellos productos o servicios que te interesa ver como evoluciona la inflación. Nosotros la calculamos por vos!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- CLIMA -->
+            <div class="loader" id="cargando">Loading...</div>
+            <div class="card col-12 col-md-6 col-lg-3" id="climaConteiner">
+                <div class="card-wrapper">
+                    <div class="card-box align-center">
+                        <div class="iconfont-wrapper">
+                            <span class="mbr-iconfont mobi-mbri-cloud mobi-mbri"></span>
+                        </div>
+                        <h5 class="card-title mbr-fonts-style display-2"><strong id="temperatura"></strong></h5>
+                        <p class="card-text mbr-fonts-style display-7" id="estado"></p>
+                        <p class="card-text mbr-fonts-style display-7" id="fecha"></p><Strong class="card-text mbr-fonts-style display-7" id="lugar"></Strong>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="form5 cid-tubBITqFUh" th:if="${mensaje!=null}" id="calculo">
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Vamos a calcular el consumo!</strong></h3>
+            <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">
+                Ingresá los datos en el siguiente formulario</h4>
+        </div>
+        <div class="row justify-content-center mt-4" th:if="${mensaje==null}" >
+            <div class="col-lg-8 mx-auto mbr-form">
+            
+            </div>
+        </div>
+    
+    <div class="row justify-content-center mt-4" th:unless="${mensaje==null}">
+            <div class="col-lg-8 mx-auto mbr-form">
+            <!-- FORMULARIO DE CALCULO -->
+                <form th:action="@{/datosKm}" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
+                	<input type="hidden" name="email" data-form-email="true" value="">
+                   <p class="mbr-fonts-style mbr-text mbr-white mb-3 display-7" th:if="${msjExito!=null}" th:text="${msjExito}"></p>
+                    <div class="row">
+                    
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12" >En tu próxima carga de combustible deberías completar los siguientes datos y llenar el tanque!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! some problem!
+                        </div>
+                    </div>
+                    <div class="dragArea row" >
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+                        	<select name="marca" placeholder="Marca de tu auto" data-form-field="name" class="form-control" value="" id="name-form5-a">
+                        	<option>ALFA ROMEO</option>
+                        	<option>AUDI</option>
+                        	<option>BAIC</option>
+                        	<option>BMW</option>
+                        	<option>CHANGAN</option>
+                        	<option>CHERY</option>
+                        	<option>CHEVROLET</option>
+                        	<option>CHRYSLER</option>
+                        	<option>CITROEN</option>
+                        	<option>DODGE</option>
+                        	<option>DS</option>
+                        	<option>F.E.R.E.S.A.</option>
+                        	<option>FAW</option>
+                        	<option>FERRARI</option>
+                        	<option>FIAT</option>
+                        	<option>FORD</option>
+                        	<option>FOTON</option>
+                        	<option>GEELY</option>
+                        	<option>GREAT WALL</option>
+                        	<option>HAVAL</option>
+                        	<option>HEIBAO</option>
+                        	<option>HONDA</option>
+                        	<option>HYUNDAI</option>
+                        	<option>ISUZU</option>
+                        	<option>JAC</option>
+                        	<option>JAGUAR</option>
+                        	<option>JEEP</option>
+                        	<option>JETOUR</option>
+                        	<option>KIA</option>
+                        	<option>LAND ROVER</option>
+                        	<option>LEXUS</option>
+                        	<option>LIFAN</option>
+                        	<option>MASERATI</option>
+                        	<option>MCLAREN</option>
+                        	<option>MERCEDES BENZ</option>
+                        	<option>MINI</option>
+                        	<option>MITSUBISHI</option>
+                        	<option>NISSAN</option>
+                        	<option>PEUGEOT</option>
+                        	<option>PORSCHE</option>
+                        	<option>RAM</option>
+                        	<option>RENAULT</option>
+                        	<option>SEAT</option>
+                        	<option>SERO ELECTRIC</option>
+                        	<option>SHINERAY</option>
+                        	<option>SMART</option>
+                        	<option>SOUEAST</option>
+                        	<option>SSANGYONG</option>
+                        	<option>SUBARU</option>
+                        	<option>SUZUKI</option>
+                        	<option>SWM</option>
+                        	<option>TOYOTA</option>
+                        	<option>VOLKSWAGEN</option>
+                        	<option>VOLVO</option>
+                        	</select>
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="number" name="anio" placeholder="Año de tu auto" data-form-field="email" class="form-control" value="" id="email-form5-a">
+                        </div>
+                        <div class="col-sm-12 form-group mb-3" data-for="email">
+                            <input type="text" name="modelo" placeholder="Modelo de tu auto" data-form-field="email" class="form-control" value="" id="email-form5-a">
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="number" name="kilometros" placeholder="Kmtros actuales" data-form-field="email" class="form-control" value="" id="email-form5-a">
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="email" name="mail" placeholder="regalanos tu mail" data-form-field="email" class="form-control" th:value="${mail}" id="email-form5-a">
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-4">Registrar</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</div>
+</section>
+<!-- FORM PARA LA SEGUNDA CARGA DE COMBUSTIBLE -->
+<section data-bs-version="5.1" class="form5 cid-tubBITqFUh" th:if="${msjExito!=null || autoEncontrado!=null}" id="calculo">
+    <div class="container">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Vamos a calcular el consumo!</strong></h3>
+            <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">
+                Ingresá los datos en el siguiente formulario</h4>
+        </div>
+      
+    
+    <div class="row justify-content-center mt-4" th:if="${msjExito!=null}">
+            <div class="col-lg-8 mx-auto mbr-form">
+            <!-- FORMULARIO DE CALCULO -->
+                <form th:action="@{/calculoDeConsumo}" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name" >
+                	<input type="hidden" name="mail" data-form-email="true" th:value="${mail}">
+                	
+                  <p th:text="${error}"></p>
+                  
+                    <div class="dragArea row">
+                        
+                        <div class="col-sm-12 form-group mb-3" data-for="email">
+                            <input type="text" name="" placeholder="Modelo de tu auto" data-form-field="email" class="form-control" th:value="${marca}" id="email-form5-a" disabled>
+                        </div>
+                        
+                        <div class="col-sm-12 form-group mb-3" data-for="email">
+                            <input type="number" data-form-field="email" class="form-control" th:value="${kilometros}" id="email-form5-a" disabled>
+                        </div>
+                        
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="number" name="kilometraje" placeholder="Kilometros actuales" data-form-field="email" class="form-control" value="" id="email-form5-a" required>
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="number" name="litros" placeholder="Litros cagados" data-form-field="email" class="form-control" value="" id="email-form5-a" required>
+                        </div>
+                        <div class="col-sm-12 form-group mb-3" data-for="email">
+                            <input type="email" name="" placeholder="regalanos tu mail" data-form-field="email" class="form-control" th:value="${mail}" id="email-form5-a" disabled>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-4">Registrar</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4" th:if="${autoEncontrado!=null}">
+            <div class="col-lg-8 mx-auto mbr-form">
+            <!-- FORMULARIO 2 DE CALCULO -->
+                <form th:action="@{/calculoDeConsumo}" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name" >
+                	<input type="hidden" name="mail" data-form-email="true" th:value="${autoCargado.mail}">
+                  	<div class="row">
+                     <p th:text="${error}"></p>
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12" >En tu próxima carga de combustible deberías completar los siguientes datos y llenar el tanque!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! some problem!
+                        </div>
+                  
+                    <div class="dragArea row">
+                        
+                        <div class="col-sm-12 form-group mb-3" data-for="email">
+                            <input type="text" name="" placeholder="Modelo de tu auto" data-form-field="email" class="form-control" th:value="${autoCargado.marca}" id="email-form5-a" disabled>
+                        </div>
+                        
+                        <div class="col-sm-12 form-group mb-3" data-for="email">
+                            <input type="number" data-form-field="email" class="form-control" th:value="${autoCargado.KmActuales}" id="email-form5-a" disabled>
+                        </div>
+                        
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="number" name="kilometraje" placeholder="Kilometros actuales" data-form-field="email" class="form-control" value="" id="email-form5-a" required>
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="number" name="litros" placeholder="Litros cagados" data-form-field="email" class="form-control" value="" id="email-form5-a" required>
+                        </div>
+                        <div class="col-sm-12 form-group mb-3" data-for="email">
+                            <input type="email" name="" placeholder="regalanos tu mail" data-form-field="email" class="form-control" th:value="${autoCargado.mail}" id="email-form5-a" disabled>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-4">Registrar</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</div>
+</section>
+
+<section data-bs-version="5.1" class="info1 cid-tucxqVw9HV" th:if="${consumoAutoEncontrado!=null || consumo!=null}" id="info1-q">
+
+    <div class="align-center container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8" id="km">
+                <h3 class="mbr-section-title mb-4 mbr-fonts-style display-1" th:text="${#numbers.formatDecimal((__${consumoAutoEncontrado.consumo}__),1,'POINT',2,'COMMA')}+' lts cada 100km'">
+                    <strong ></strong></h3>
+                <p class="mbr-text mb-5 mbr-fonts-style display-5">Es el consumo real de tu auto.<br>Esta xx% por encima de la media para este modelo.&nbsp;<br>Recorriste xx km desde la ultima carga registrada y tu auto consumió xx lts.</p>
+                <div class="mbr-section-btn"><a class="btn btn-white display-4" href="https://mobiri.se"><span class="mobi-mbri mobi-mbri-edit mbr-iconfont mbr-iconfont-btn"></span>Cotiza el seguro para tu auto aquí</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- SECCION PARA VIRALIZAR -->
+<section data-bs-version="5.1" class="social2 cid-tubQRyQgoq" id="share2-e" th:if="${consumoAutoEncontrado!=null || consumo!=null}">
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-12">
+                <h3 class="mbr-section-title align-center mb-3 mbr-fonts-style display-2"><strong>Si te resulto util compartí con tus amigos</strong></h3>
+                <div>
+                    <div class="mbr-social-likes align-center" data-counters="false">
+                        <span class="btn btn-social whatsapp m-2">
+                            <i class="socicon socicon-whatsapp"></i>
+                        </span>
+                        
+                        
+                        
+                        <span class="btn btn-social instagram m-2">
+                            <i class="socicon socicon-instagram"></i>
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;">
+<a href="https://mobiri.se/2936414" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a>
+<p hidden="hidden" style="margin: 0;text-align: center;" class="display-7">Made with &#8204;</p><a hidden="hidden" style="z-index:1" href="https://mobirise.com/builder/no-code-website-builder.html">No Code Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/sociallikes/social-likes.js"></script>  <script src="assets/theme/js/script.js"></script>  <script src="assets/formoid/formoid.min.js"></script>  
+  
+  
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+	<script src="/assets/seguraMente.js/sm.js"></script> 
+  </body>
+</html>
