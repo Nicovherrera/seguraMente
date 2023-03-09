@@ -50,8 +50,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/sobreSeguramente">Sobre Seguramente</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="iniciarSesion.html">Iniciar Sesión</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="registro.html">Registrate</a>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/iniciarSesion">Iniciar Sesión</a></li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/registro">Registrate</a>
                     </li></ul>
                 <div class="icons-menu">
                     <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
@@ -76,7 +76,7 @@
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
                 <strong>Registra tu compra</strong></h3>
             <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7">
-                Ingresa en este formulario el precio del articulo del que queres ir llevando un registro de la evolución del precio.</h4>
+                Ingresa en este formulario el precio del articulo del que quieras ir llevando un registro de la evolución del precio.</h4>
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8 mx-auto mbr-form" data-form-type="">
@@ -120,7 +120,8 @@
       <th scope="col">Proveedor</th>
       <th scope="col">Producto</th>
       <th scope="col">Precio</th>
-      <th scope="col">Inflación</th>
+      <th scope="col">Precio Anterior</th>
+      <th scope="col">Variación Mensual</th>
       <th scope="col">Acciones</th>
     </tr>
   </thead>
@@ -128,15 +129,16 @@
     <tr>
       <th scope="row" th:text="${lp.fechaCompra}"></th>
       <td th:text="${lp.nombreProveedro}"></td>
-      <td th:text="${lp.produco}"></td>
-      <td th:text="'$ '+${lp.precio}"></td> 
+      <td th:text="${lp.producto}"></td>
+      <td th:text="'$ '+${lp.precio}"></td>
+      <td th:text="'$ '+${lp.precioCompAnt}"></td> 
       <td th:text="${#numbers.formatDecimal((__${lp.inflacion}__),1,'POINT',2,'COMMA')}+' %'"></td>
       <!-- Editar --> <td><a th:href="@{/modificarPrecio/__${lp.id}__}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
   <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
 </svg></a>
 
-	<!-- + Infor --> <a th:href="@{/hitorialPrecios/__${lp.produco}__}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
+	<!-- + Infor --> <a th:href="@{/hitorialPrecios/__${lp.producto}__}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
   <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
   <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 		</svg></a>

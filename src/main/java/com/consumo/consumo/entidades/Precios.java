@@ -22,7 +22,7 @@ public class Precios {
 	private Date fechaCompra;
 	private Date fechaCompraAnt;
 	private String nombreProveedro;
-	private String produco;
+	private String producto;
 	private String descripcion;
 	private Double precio;
 	private Double precioCompAnt;
@@ -54,11 +54,11 @@ public class Precios {
 	public void setNombreProveedro(String nombreProveedro) {
 		this.nombreProveedro = nombreProveedro;
 	}
-	public String getProduco() {
-		return produco;
+	public String getProducto() {
+		return producto;
 	}
-	public void setProduco(String produco) {
-		this.produco = produco;
+	public void setProducto(String produco) {
+		this.producto = produco;
 	}
 	public String getDescripcion() {
 		return descripcion;
@@ -94,7 +94,7 @@ public class Precios {
 	@Override
 	public String toString() {
 		return "Precios [id=" + id + ", fechaCompra=" + fechaCompra + ", fechaCompraAnt=" + fechaCompraAnt
-				+ ", nombreProveedro=" + nombreProveedro + ", produco=" + produco + ", descripcion=" + descripcion
+				+ ", nombreProveedro=" + nombreProveedro + ", producto=" + producto + ", descripcion=" + descripcion
 				+ ", precio=" + precio + ", precioCompAnt=" + precioCompAnt + ", inflacion=" + inflacion + ", estado="
 				+ estado + "]";
 	}

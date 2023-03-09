@@ -82,4 +82,14 @@ public class ControladorPrincipal {
 		return "index.html";
 	}
 	
+	@GetMapping("/iniciarSesion")
+	public String iniciarSesion () {
+		return "iniciarSesion.html";
+	}
+	
+	@GetMapping("/registro")
+	public String registro () {
+		return "registro.html";
+	}
+	
 }
